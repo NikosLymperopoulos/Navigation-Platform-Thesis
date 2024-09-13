@@ -11,9 +11,7 @@ This is a Django-based navigational platform that provides a web application for
 - `asgi.py`: ASGI configuration for the project.
 - `myapp/`: The main application directory.
 - `templates/`: HTML templates for the application.
-  - `map.html`: The main map template.
-- `static/`: Static files for the application.
-  - `homepage.js`: JavaScript code for the homepage.
+- `static/`: Static files including JavaScript and CSS code for the application.
 - `views.py`: View functions for the application.
 - `models.py`: Database models for the application.
 - `forms.py`: Form definitions for the application.
