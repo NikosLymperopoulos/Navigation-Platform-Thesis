@@ -24,6 +24,7 @@ let user_data = null;
 let previousRouteLine = [];
 let previousMarkers = [];
 let userCoords = '';
+let userLocationEnabled = true;
 let user_location_marker = null;
 
 async function fetchCityInfo() {
@@ -212,8 +213,10 @@ async function MarkUserLocation(mode) {
         }
     }
     catch (error) {
-        console.error("Failed to get user location:", error);
-        showAlert("Could not get your location. Please check your browser settings and try again.");
+        if(userLocationEnabled){
+            showAlert("Could not get your location. Please check your browser settings and try again.");
+            userLocationEnabled = false;
+        }
     }
 }
 
