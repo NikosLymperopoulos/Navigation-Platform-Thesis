@@ -29,8 +29,8 @@ This is a Django-based navigational platform that provides a web application for
 
 - Django: The platform is built using Django 4.2.
 - HERE API: The platform uses the HERE API for map rendering and geolocation services.
-- Bootstrap: The platform uses Bootstrap for front-end styling.
-- jQuery: The platform uses jQuery for front-end scripting.
+- CSS : The platform uses mainly CSS for front-end styling, and some Bootstrap.
+- JavaScript: The platform uses JavaScript for front-end scripting.
 
 ## Setup and Deployment
 
