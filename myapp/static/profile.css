@@ -1,0 +1,577 @@
+/* General body and html styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #13472e;
+    overflow-y: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d7e7dc;
+    border-bottom: 1px solid #13472e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.navbar .button-group-left, .navbar .button-group-right {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .button-group-left{
+    margin-left : 3%;
+}
+.navbar .button-group-right{
+    margin-right : 2%;
+}
+.navbar button {
+    height: 2.85rem; 
+    width : 8rem;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #13472e;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #D0A215;
+    color: #13472e;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.navbar button:hover {
+    background-color: #d7e7dc;
+    color: #13472e;
+}
+
+/* Flex container for centering content */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    background-color: #13472e;
+}
+/* 13472e
+D0A215
+d7e7dc */
+.button-group-middle {
+    position: absolute;
+    color: #d7e7dc;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center; /* Ensures the text inside is centered */
+    white-space: nowrap; /* Prevents text from wrapping to maintain centering */
+}
+
+.button-group-middle h1 { 
+    color: #D0A215;
+    margin-bottom : 0.5rem;
+}
+
+.logo-image{
+    width: 35%; 
+    height: auto;
+    margin-bottom: 7vh;
+    user-select: none;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+/* Main content area styling */
+.flex-content {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: 20px; /* Space between rows */
+    height: 100%;
+}
+
+/* Top row styling */
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Input group styling */
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #13472e;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.bottom-row h2{
+    text-align: left;
+    padding-left: 2px;
+    color: #D0A215;
+}
+
+.input-group input{
+    font-size: 1.4rem;
+    border: 2px solid black;
+    background-color: #13472e;
+    color: #D0A215;
+    font-weight: 500;
+    border-radius: 4px;
+    padding-left: 1vh;
+}
+
+::placeholder {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #D0A215;
+}
+
+/* Bottom row styling */
+.bottom-row {
+    display: flex;
+    gap: 20px;
+    height: 50%; /* Ensure bottom row takes available space */
+}
+
+/* Left section styling */
+.left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px; /* Add gap for spacing between autocomplete and other content */
+}
+
+/* Autocomplete results */
+.autocomplete-results {
+    flex-grow: 1; /* Allow the container to grow */
+    overflow-y: auto; /* Enable vertical scroll */
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #d7e7dc;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    max-height: 370px; /* Allow it to take up full available height */
+}
+
+@media (max-width: 1700px) {
+    .autocomplete-results {
+        max-height: 260px;
+    }
+    .logo-image{
+        width: 27%;
+    }
+}
+
+/* Right section styling */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px; /* Add gap for spacing between favorites and other content */
+}
+
+/* Favorite Places List */
+/* Favorite Places List Container */
+.favorite-places-container {
+    flex: 1; /* Allow the container to grow and shrink based on the parent */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+    overflow-y: auto; /* Enable vertical scroll */
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #d7e7dc;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem; /* Adjust as needed */
+    font-weight: 500; /* Adjust as needed */
+}
+
+/* Individual Favorite Item */
+.favorite-item {
+    display: flex;
+    justify-content: space-between; /* Pushes the delete button to the right */
+    align-items: stretch; /* Vertically center aligns the button with the text */
+    padding: 5px;
+    margin-bottom: 5px; /* Space between items */
+    color: #D0A215;
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+}
+d
+/* Delete Button for Favorite Item */
+.favorite-item button {
+    background-color: #D0A215; /* Button background */
+    color: #13472e; /* Button text color */
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #D0A215;
+}
+
+.favorite-item button:hover {
+    background-color: #d7e7dc; /* Darker background on hover */ 
+}
+
+.favorite-places-list {
+    width: 100%;
+}
+
+
+/* Favorite place text styling */
+.favorite-item .favorite-place-text {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 0;
+    flex-grow: 1;
+    height: 100%;
+    background-color: #D0A215;
+    color: #13472e;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: 1px solid #d7e7dc;
+    border-bottom: 1px solid #13472e;
+    border-radius: 4px; 
+    padding: 5px 10px;
+}
+
+/* Autocomplete item styling */
+.autocomplete-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Adjusted padding for a reasonable height */
+    background-color: #D0A215;
+    color: #13472e;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: 1px solid #d7e7dc;
+    border-bottom: 1px solid #13472e;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.autocomplete-item:hover {
+    background-color: #d7e7dc;
+    border: 1px solid #13472e;
+}
+
+/* Delete button styling */
+.favorite-item button.delete-favorite {
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #d7e7dc;
+    border-bottom: 1px solid #13472e;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.favorite-item button.delete-favorite:hover{
+    border: 1px solid #13472e;
+}
+
+/* Buttons styling */
+.flex-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#form-check{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    background-color: #D0A215; /* Match the background color of the form elements */
+    color: #13472e; /* Match the text color of the form elements */
+    font-size: 1.4rem; /* Match the font size of the form elements */
+    color: #13472e;
+    margin-bottom: 15px;
+    background-color: #d7e7dc;
+    font-weight: 600;
+    border-radius: 4px;
+}
+
+#form-check-label{
+    padding: 0 0 0 2vh;
+    margin-top: 4px;
+    pointer-events: none;
+}
+
+#form-check-box{
+    width: 10%;
+    height: 1.4rem;
+    accent-color: #13472e;
+    cursor: pointer;
+}
+
+/* Button styling */
+button {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #13472e;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #D0A215;
+    color: #13472e;
+}
+
+button:hover {
+    background-color: #d7e7dc;
+    color: #13472e;
+}
+
+/* Accessibility Tools */
+
+.accessibility-icon{
+    margin-right: 30px;
+    margin-bottom: 5px;
+}
+
+#accessibility-toolbar {
+    position: fixed; /* Fixes the toolbar relative to the viewport */
+    left: 25px; /* Position the toolbar at the left edge */
+    top: 12%; /* Adjust the vertical position */
+    width: 300px; /* Set the width of the toolbar */
+    z-index: 1000; /* Ensure the toolbar stays above other content */
+}
+
+/* .toolbar-toggle {
+    /* Add styles for the toggle button 
+} */
+
+.toolbar-overlay {
+    display: none; /* Hide the overlay by default */
+    position: absolute;
+    /* right: 0; */
+    top: 100%; /* Position below the toolbar */
+    background: #fff; /* Background color */
+    border: 1px solid #ddd; /* Border styling */
+    padding: 20px; /* Padding inside the overlay */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow */
+    width: 100%;
+    z-index: 2000;
+    /* transform: translateX(-450px); */
+}
+
+.toolbar-overlay.visible {
+    display: block; /* Show the overlay when visible class is applied */
+    
+}
+
+.toolbar-inner {
+    /* Add styles for the toolbar inner content */
+    width: 100%;
+}
+
+.toolbar-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.toolbar-items a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.btn-resize-font {
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+.high-contrast .flex-container {
+    background-color: black;
+}
+
+/* Ensure text and elements are high-contrast */
+.high-contrast h1, 
+.high-contrast h2,
+.high-contrast p, 
+.high-contrast span, 
+.high-contrast input, 
+.high-contrast button, 
+.high-contrast .autocomplete-results, 
+.high-contrast .waypoint-item,
+.high-contrast .favorite-places-container, 
+.high-contrast .favorite-item, 
+.high-contrast .favorite-item span,
+.high-contrast .quick-access-item,
+.high-contrast .navbar,
+.high-contrast .input-group,
+.high-contrast .form-group,
+.high-contrast #form-check,
+.high-contrast #form-check-label,
+.high-contrast #form-check-box {
+    color: white; /* Text color */
+    background-color: black; /* Background color */
+    border: 1px solid white; /* Borders for inputs and buttons */
+}
+
+.high-contrast #form-check-box {
+    accent-color: white;
+}
+
+/* Highlight autocomplete results */
+.high-contrast .autocomplete-item,  .high-contrast button.delete-favorite {
+    background-color: black;
+    color: white; /* High-contrast color for better visibility */
+    border: 1px solid white;
+}
+
+.high-contrast .autocomplete-item:hover, .high-contrast button.delete-favorite:hover {
+    border: 1px solid white;
+}
+
+/* Highlight waypoints list items */
+.high-contrast .waypoint-item {
+    background-color: black;
+    color: white; /* Ensure visibility against black background */
+}
+
+/* Quick access items */
+.high-contrast .quick-access-item {
+    background-color: black;
+    color: white; /* Adjust color if necessary */
+}
+
+.high-contrast .side-panel-child,
+.high-contrast .side-panel p,
+.high-contrast .side-panel,
+.high-contrast ::placeholder {
+    color:white;
+}
+
+.high-contrast button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* Container for custom alerts */
+.custom-alert {
+    position: absolute;
+    top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    background-color: #d7e7dc;
+    width: 80%;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    color: #D0A215;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#alertMessage{
+    font-size: 1.4rem;
+    padding-left: 1vh;
+}
+
+.custom-alert.visible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+}
+
+.custom-alert.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#closeButton {
+    background-color: #D0A215; /* Primary style */
+    color: #d7e7dc;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: auto; /* Ensure button stays on the right */
+    z-index: 200000;
+    opacity: 1;
+    border: 1px solid #D0A215;
+}
+
+#closeButton:hover {
+    background-color: #d7e7dc;
+    color: #D0A215;
+}
+
+.custom-alert .alert-button-span span {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#alertMessage {
+    display: flex;
+    justify-content: flex-start;
+}

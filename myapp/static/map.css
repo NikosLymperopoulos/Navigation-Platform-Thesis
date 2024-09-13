@@ -1,0 +1,679 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #13472E;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.flex-input, button, h1, span, .waypoints-panel, .waypoint-item{
+    user-select: none;
+}
+
+/* Styles for the loading overlay */
+.loading-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position to cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* High z-index to ensure it's on top of other elements */
+    justify-content: center; /* Center the spinner */
+    align-items: center; /* Center the spinner */
+}
+
+/* Styles for the loading spinner */
+.loading-spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light border for spinner */
+    border-left: 8px solid #fff; /* Darker border for spinner */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d7e7dc;
+    border-bottom: 1px solid #13472E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.navbar .button-group-left, .navbar .button-group-right {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .button-group-left{
+    margin-left : 3%;
+}
+.navbar .button-group-right{
+    margin-right : 2%;
+}
+.navbar button {
+    height: 2.85rem; 
+    width : 8rem;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #13472E;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #D0A215;
+    color: #13472E;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.navbar button:hover {
+    background-color: #d7e7dc;
+    color: #13472E;
+}
+
+/* Actions Drop down List */
+/* Ensure custom-dropdown menu is hidden by default */
+.custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 10000;
+    padding: 10px 0;
+    left: 37vh;
+    top: 7vh;
+    background-color: #13472E;
+    border-radius: 5px;
+    opacity: 0.97;
+
+}
+
+@media (max-width: 1700px) {
+    .custom-dropdown-menu {
+        left: 46vh;
+        top: 9vh;
+    }
+}
+
+.custom-dropdown-menu.visible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.custom-dropdown-menu button{
+    height : 100%;
+    font-size: 1.2rem;
+}
+
+/* Style the custom-dropdown buttons */
+.custom-dropdown-item {
+    color: black;
+    padding: 20px 20px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    border-bottom: 1px solid #d7e7dc;
+    z-index: 10000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+}
+
+
+.custom-dropdown-item:hover {
+    background-color: #d7e7dc;
+}
+/* Flex Container */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
+    padding: 0 20px;
+    background-color: #13472E;
+    height : 95vh;
+}
+
+.flex-input{
+    margin-top: 10vh;
+}
+
+.flex-item {
+    text-align: center;
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    box-sizing: border-box; 
+}
+.logo-image{
+    width: 25%; 
+    height: auto;
+    margin-bottom: 7vh;
+    user-select: none;
+    margin-top: 5vh;
+    text-align: center;
+    position: absolute;
+    z-index: 1000;
+    user-select: none;
+    top: 3.5%;
+}
+
+
+/* Input Section */
+.flex-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+}
+
+input {
+    padding: 10px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 500;
+    border: 2px solid black;
+    background-color: #13472E;
+    color: #D0A215;
+    width: 30%;
+}
+
+input::placeholder {
+    font-size: 1.4rem;
+    color: #D0A215;
+}
+
+.search-bar-container {
+    position: relative;
+    width: 59.3vh;
+
+    margin-top: -0.5vh;
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    border: 1px solid #d7e7dc;
+}
+
+.quick-access {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    background: #d7e7dc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    border: 2px solid black;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    overflow-y: scroll;
+    max-height: 250px;
+}
+
+.quick-access-item {
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-left: 0.9rem;
+    background-color: #d7e7dc;
+    color: #13472E;
+    width: 95%;
+    margin-left : 1.8vh;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 0.5vh;
+}
+
+.quick-access-item:hover {
+    color: #d7e7dc;
+    background-color: #13472E;
+}
+
+/* Map Section */
+.flex-map {
+    display: flex;
+    gap: 2.5vh;
+    height: 63vh;
+}
+
+@media (max-width: 1700px) {
+    .flex-map {
+        height: 58vh;
+    }
+}
+
+#map {
+    flex-grow: 1; /* Allow the map to take the remaining space beside the side panel */
+    padding : 3px;
+    background-color: #d7e7dc;
+    text-align: left;
+}
+
+/* Adjusting the side-panel to split height equally */
+.side-panel {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5vh;
+}
+
+.side-panel-child {
+    flex: 1; /* Each child takes up 50% of the available height */
+    display: flex;
+    flex-direction: column;
+}
+
+.side-panel-child p  {
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom: 1px solid #13472E;
+    background-color: #D0A215;
+    border-radius: 4px; 
+    padding-left : 5px;
+    color : #13472E;
+}
+
+#route-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #d7e7dc; /* Matches the background color of the waypoint and suggestion lists */
+    color: #333; /* Matches the text color of the waypoint and suggestion lists */
+    border: 1px solid #d7e7dc; /* Matches the border of the waypoint and suggestion lists */
+    border-radius: 4px; /* Adds a subtle rounding like the other elements */
+    margin-bottom: 10px; /* Adds some spacing between route info and other content */
+    min-height: 46px;
+    font-weight: 500;
+}
+
+.duration-display, .distance-display {
+    flex: 1;
+}
+
+/* Optional: Adding padding and text alignment */
+.duration-display {
+    text-align: left; /* Aligns the duration to the left */
+}
+
+.distance-display {
+    text-align: right; /* Aligns the distance to the right */
+}
+
+#autocomplete-container {
+    position: absolute;
+    max-height: 200px;
+    display: none;
+    width: 100%;
+    z-index: 1000;
+    top: 31.5%;
+}
+
+@media (max-width: 1700px) {
+    #autocomplete-container {
+        top: 37%;
+        margin-left: -0.5vh;
+    }
+    .autocomplete-results{
+        min-width: 61.2vh;
+
+    }
+
+}
+
+.autocomplete-results{
+    width: 59.4vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    height: 20vh;
+    opacity: 0.98;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    background-color: #d7e7dc;
+    border-radius: 4px;
+    margin-left: -4.2vh;
+    font-weight: 500;
+}
+
+.autocomplete-item{
+    width : 100%;
+    margin-top : 5px;
+    font-size: 1.4rem;
+}
+
+/* Add a class to show the search-bar-container when needed */
+#autocomplete-container.visible {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.autocomplete-panel , .waypoints-panel {
+    flex-grow: 1; /* Allow the content to grow within its container */
+    overflow-y: scroll;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+    background-color: #d7e7dc;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    width: 13%;
+    padding: 10px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    color: #D0A215;
+    background-color: #13472E;
+    border: none;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background-color: #D0A215;
+    color: #13472E;
+}
+
+/* Flex container for each waypoint item */
+.waypoint-item, .autocomplete-item {
+    display: flex;
+    justify-content: space-between; /* Pushes the delete button to the right */
+    align-items: center; /* Vertically center aligns the button with the text */
+    padding: 3px;
+    margin-bottom: 5px; /* Space between items */
+    background-color: #D0A215; /* Background color for each item */
+    color : #13472E;
+
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+}
+
+.waypoint-item{
+    user-select: none; /* Prevent text selection during drag */
+}
+.waypoint-item.dragging {
+    opacity: 0.5; /* Indicate that the item is being dragged */
+}
+
+.autocomplete-item {
+    padding-left: 2vh;
+}
+
+/* Hover effect to highlight item */
+.autocomplete-item:hover {
+    color: #d7e7dc;
+    background-color: #13472E; /* Slightly darker background on hover */
+    cursor: pointer;
+}
+
+
+/* Styling for the delete button */
+.delete-waypoint {
+    color: #D0A215;
+    background-color: #13472E;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px; /* Increase padding for better click area */
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 0.9rem; /* Space between text and button */
+}
+.delete-waypoint:hover {
+    background-color: #d7e7dc;
+    color: #13472E;
+}
+
+/* Accessibility Tools */
+
+.accessibility-icon{
+    margin-right: 30px;
+    margin-bottom: 5px;
+}
+
+#accessibility-toolbar {
+    position: fixed; /* Fixes the toolbar relative to the viewport */
+    left: 25px; /* Position the toolbar at the left edge */
+    top: 12%; /* Adjust the vertical position */
+    width: 300px; /* Set the width of the toolbar */
+    z-index: 1000; /* Ensure the toolbar stays above other content */
+}
+
+/* .toolbar-toggle {
+    /* Add styles for the toggle button 
+} */
+
+.toolbar-overlay {
+    display: none; /* Hide the overlay by default */
+    position: absolute;
+    right: 0;
+    top: 100%; /* Position below the toolbar */
+    background: #fff; /* Background color */
+    border: 1px solid #ddd; /* Border styling */
+    padding: 20px; /* Padding inside the overlay */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow */
+    width: 100%;
+    z-index: 2000;
+    /* transform: translateX(-450px); */
+}
+
+.toolbar-overlay.visible {
+    display: block; /* Show the overlay when visible class is applied */
+    
+}
+
+.toolbar-inner {
+    /* Add styles for the toolbar inner content */
+    width: 100%;
+}
+
+.toolbar-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.toolbar-items a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.btn-resize-font {
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* High Contrast Mode Styles */
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+.high-contrast .flex-container {
+    background-color: black;
+}
+
+.high-contrast input::placeholder {
+    color: white;
+}
+
+/* Ensure text and elements are high-contrast */
+.high-contrast h1, 
+.high-contrast p, 
+.high-contrast span, 
+.high-contrast input, 
+.high-contrast button, 
+.high-contrast .autocomplete-results,
+.high-contrast .autocomplete-item, 
+.high-contrast .waypoint-item,
+.high-contrast .waypoints-panel,
+.high-contrast #route-info,
+.high-contrast .search-bar-container,
+.high-contrast .quick-access,
+.high-contrast .custom-dropdown-menu,
+.high-contrast .quick-access-item,
+.high-contrast .navbar  {
+    color: white; /* Text color */
+    background-color: black; /* Background color */
+    border: 1px solid white; /* Borders for inputs and buttons */
+}
+
+/* Adjust specific high-contrast styles for the map container if needed */
+.high-contrast #map {
+    border: 2px solid white; /* Example border adjustment */
+}
+
+/* Highlight autocomplete results */
+.high-contrast .autocomplete-item {
+    background-color: black;
+    color: white; /* High-contrast color for better visibility */
+}
+
+/* Highlight waypoints list items */
+.high-contrast .waypoint-item {
+    background-color: black;
+    color: white; /* Ensure visibility against black background */
+}
+
+/* Quick access items */
+.high-contrast .quick-access-item {
+    background-color: black;
+    color: white; /* Adjust color if necessary */
+}
+
+.high-contrast .side-panel-child,
+.high-contrast .side-panel p,
+.high-contrast .side-panel {
+    color:white;
+}
+
+.high-contrast button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Container for custom alerts */
+.custom-alert {
+    position: absolute;
+    top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    background-color: #d7e7dc;
+    width: 80%;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    color: #D0A215;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#alertMessage{
+    font-size: 1.4rem;
+    padding-left: 1vh;
+}
+
+.custom-alert.visible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+}
+
+.custom-alert.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#closeButton {
+    background-color: #D0A215; /* Primary style */
+    color: #d7e7dc;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    margin-left: auto; /* Ensure button stays on the right */
+    z-index: 200000;
+    opacity: 1;
+    border: 1px solid #D0A215;
+}
+
+#closeButton:hover {
+    background-color: #d7e7dc;
+    color: #D0A215;
+}
+
+.custom-alert .alert-button-span span {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#alertMessage {
+    display: flex;
+    justify-content: flex-start;
+}
