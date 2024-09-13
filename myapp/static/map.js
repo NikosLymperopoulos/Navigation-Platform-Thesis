@@ -1152,7 +1152,7 @@ async function calculateRoute(platform, map, start, end) {
             destination: end,
             return: 'polyline,summary',
             'avoid[segments]': segment_ids.join(','),
-            'pedestrian[speed]' : 1.15,
+            'pedestrian[speed]' : 1,
             'via': new H.service.Url.MultiValueQueryParameter(viaWaypoints)
         };
     }
